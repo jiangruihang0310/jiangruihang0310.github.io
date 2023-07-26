@@ -12,7 +12,7 @@
     "web-vitals": "^2.1.4"
   },
   
-	"homepage": "https://jiangruihang0310.github.io/github-actions-demo",
+  "homepage": "https://jiangruihang0310.github.io/github-actions-demo",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
