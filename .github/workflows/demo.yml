@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@v3
+      uses: JamesIves/github-pages-deploy-action@4
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
