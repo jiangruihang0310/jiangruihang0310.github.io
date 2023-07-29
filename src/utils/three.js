@@ -1,3 +1,4 @@
+import {ref} from 'vue'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
@@ -108,6 +109,7 @@ export const addGLTFHandler = (gltfPath, GltfFile) => {
 	// let sphereMaterial = new THREE.MeshLambertMaterial( { envMap: scene.background } );
 	// renderer.compile(scene, camera)
 	loader.load(
+		
 		gltfPath,
 		(gltf) => {
 			// 模型
