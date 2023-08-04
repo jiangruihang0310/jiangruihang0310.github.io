@@ -1,9 +1,9 @@
 <template>
 	<div class="iframe">
-		<iframe src="http://localhost:3000/?groupcode=zlysj7&code=MTMT000190" frameborder="0"></iframe>
+		<iframe src="http://10.129.33.37:8080" frameborder="0"></iframe>
 	</div>
 </template>
-
+						
 <script>
 export default {
 	mounted(){

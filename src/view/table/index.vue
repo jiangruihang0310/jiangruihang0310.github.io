@@ -1,6 +1,6 @@
 <template>
 	<div class="item">
-		<img src="@/assets/biglogo.png"/>
+		<!-- <img src="@/assets/biglogo.png"/> -->
 		<el-table :data="tableData" border class="top" :header-cell-style="{ background: '#eee', color: '#000000' }">
 			<el-table-column prop="name" label="姓名">
 			</el-table-column>
