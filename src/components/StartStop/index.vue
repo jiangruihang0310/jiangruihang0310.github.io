@@ -42,6 +42,10 @@ export default {
 			type:String,
 			default:()=>'100%'
 		},
+		customHeight:{
+			type:String,
+			default:()=>30
+		}
 	},
 	setup(props) {
 		// var dom = document.getElementById("containers");
@@ -189,9 +193,8 @@ export default {
 								var start = api.coord([api.value(1), categoryIndex]); // 这里使用 api.coord(...) 将数值在当前坐标系中转换成为屏幕上的点的像素值。
 								var end = api.coord([api.value(2), categoryIndex]);
 								var height = api.size([0, 1])[1] * 5;
-								var containerHeight = api.getHeight(); // 获取容器高度
-								var customHeight = 30; // 自定义图形的固定高度
-								var yOffset = (containerHeight - customHeight) / 4
+								var containerHeight = api.getHeight()/4; // 获取容器高度
+								var customHeight = props.customHeight; // 自定义图形的固定高度
 								// console.log(api.style), '2222');
 								return {
 									type: 'rect',// 表示这个图形元素是矩形。还可以是 'circle', 'sector', 'polygon' 等等。
@@ -204,7 +207,7 @@ export default {
 									}, 
 									{ // 当前坐标系的包围盒。
 										x: params.coordSys.x,
-										y: params.coordSys.y + yOffset,
+										y: params.coordSys.y + (containerHeight+customHeight)  ,
 										width: params.coordSys.width,
 										height: customHeight,
 									}),
