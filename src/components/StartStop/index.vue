@@ -20,7 +20,7 @@ export default {
 			type:String,
 			default:()=>'启停信号'
 		},
-		xAxis:{
+		xAxis:{ //默认X轴数据格式
 			type:Array,
 			default:()=>[
 					"2023-08-24 00:00:00",
@@ -30,9 +30,9 @@ export default {
 					"2023-08-24 00:04:00",
 				]
 		},
-		data:{
+		data:{ // 默认启停图数据格式   0代表停止    1代表启动   -1无信号
 			types:Array,
-			default:()=>["0","0","0",'1','1','0']
+			default:()=>["0","1","1",'-1','-1']
 		},
 		width:{
 			type:String,
@@ -136,8 +136,7 @@ export default {
 							}
 						},
 						axisLabel: {
-							// align: 'left', // 将刻度标签居中对齐
-							verticalAlign: 'middle' // 垂直居中对齐
+							marginTop:5
 						},
 						axisTick: {
 							show: false,
@@ -196,14 +195,14 @@ export default {
 								// console.log(api.style), '2222');
 								return {
 									type: 'rect',// 表示这个图形元素是矩形。还可以是 'circle', 'sector', 'polygon' 等等。
-
 									align: 'center',
 									shape: echarts.graphic.clipRectByRect({ // 矩形的位置和大小。
 										x: start[0],
 										y: start[1] - height / 2,
-										width: end[0] - start[0] +1 ,
+										width: end[0] - start[0] +.8 ,
 										height: height
-									}, { // 当前坐标系的包围盒。
+									}, 
+									{ // 当前坐标系的包围盒。
 										x: params.coordSys.x,
 										y: params.coordSys.y + yOffset,
 										width: params.coordSys.width,
