@@ -122,8 +122,8 @@ export default {
 					grid: {//绘图网格
 						left: '10%',
 						right: '5%',
-						top: '20%',
-						bottom: '20%',
+						top: '10%',
+						bottom: '10%',
 						borderWidth: 0
 					},
 					xAxis: {

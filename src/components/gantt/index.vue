@@ -95,7 +95,6 @@ export default {
 		const methods = {
 			draw() {
 				const echart = echarts.init(gantt.value)
-
 				const option = {
 					tooltip: {
 						formatter: function (params) {
@@ -111,7 +110,7 @@ export default {
 							type: 'slider',
 							filterMode: 'weakFilter',
 							showDataShadow: false,
-							top: 400,
+							// top: 400,
 							labelFormatter: ''
 						},
 						{
@@ -120,7 +119,7 @@ export default {
 						}
 					],
 					grid: {
-						height: 300
+						// height: 300
 					},
 					xAxis: {
 						// min: startTime,
