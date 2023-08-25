@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from './axios'
 // 获取测试折线图数据
 const line1='./LineData.json'
 const bar1='./barData.json'
@@ -24,3 +24,7 @@ export function getMap(params){
 		params:{params}
 	})
 }
+
+// 网易云 搜索接口
+
+// 网易云 

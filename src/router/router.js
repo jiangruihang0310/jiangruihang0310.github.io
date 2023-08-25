@@ -11,17 +11,18 @@ import Scene from "@/view/scene"
 import ChatRoom from '@/view/chatroom'
 import Svg from '@/view/svg'
 import DingTalk from '@/view/DingTalk'
+import Music from '@/view/music'
 const routes=[
 	{
 		path:'/',
-		name:'home',
-		component: HomeComponent,
-		meta:{name:'主页'}
+		name:'echarts',
+		component: Echats,
+		meta:{name:'启停图'}
 	},
 	{
-		path:'/echarts',
-		name:'echarts',
-		component:Echats	
+		path:'/home',
+		name:'home',
+		component:HomeComponent	
 	},
 	{
 		path:'/table',
@@ -72,6 +73,11 @@ const routes=[
 		path:"/dingTalk",
 		name:'DingTalk',
 		component:DingTalk
+	},
+	{
+		path:"/music",
+		name:"音乐",
+		component:Music
 	},
 	{ path: '*', name: 'not-found', component: NotFound }
 ]
