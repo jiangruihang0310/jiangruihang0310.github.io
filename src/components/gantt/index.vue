@@ -7,26 +7,35 @@ import { onMounted, ref, reactive, toRefs, watch } from 'vue'
 import * as echarts from 'echarts'
 export default {
 	props: {
-		yAxis: {
+		yAxis: {  // Y轴数据
 			type: Array,
 			default: () => ['categoryA', 'categoryB', 'categoryC']
 		},
-		xAxis: {
+		xAxis: {  // X轴数据
 			type: Number,
-			default: () => 
+			default: () =>
 				+new Date("2023-08-24 00:00:00")
-			
 		},
-		types:{
-			type:Array,
-			default: () =>['A','B','C','D']
-		},
-		data: {
+		data: { // 曲线数据
 			type: Array,
 			default: () => [
-				[{name:'A',value:5423},{name:'B',value:6573},{name:'C',value:4782},{name:'A',value:3298},{name:'B',value:6573},{name:'C',value:4782}],
-				[{name:'A',value:3894},{name:'C',value:3217},{name:'B',value:8756},{name:'A',value:3298},{name:'B',value:6573},{name:'C',value:4782}],
-				[{name:'C',value:2556},{name:'B',value:2593},{name:'A',value:9782},{name:'A',value:3298},{name:'B',value:6573},{name:'C',value:4782}]
+				[
+					{ name: 'A', value: 5423 },
+					{ name: 'B', value: 6573 },
+					{ name: 'C', value: 4782 },
+					{ name: 'A', value: 3298 },
+					{ name: 'B', value: 6573 },
+					{ name: 'C', value: 4782 }
+				],
+				[
+					{ name: 'A', value: 3894 },
+					{ name: 'C', value: 3217 },
+					{ name: 'B', value: 8756 },
+					{ name: 'A', value: 3298 },
+					{ name: 'B', value: 6573 },
+					{ name: 'C', value: 4782 }
+				],
+				[{ name: 'C', value: 2556 }, { name: 'B', value: 2593 }, { name: 'A', value: 9782 }, { name: 'A', value: 3298 }, { name: 'B', value: 6573 }, { name: 'C', value: 4782 }]
 			]
 		},
 		dataCount: {  // 控制甘特图一列显示几个
@@ -43,24 +52,24 @@ export default {
 		props.yAxis.forEach(function (category, index) {
 			var baseTime = startTime;
 			for (var i = 0; i < props.dataCount; i++) {
-				if(props.data[index] &&props.data[index][i]){
+				if (props.data[index] && props.data[index][i]) {
 					var name = props.data[index][i].name
-					const color=name ==='A'?'#7b9ce1':name==='B'?'#bd6d6c':'#75d874'
+					const color = name === 'A' ? '#7b9ce1' : name === 'B' ? '#bd6d6c' : '#75d874'
 					var duration = props.data[index][i].value
 					console.log(duration);
 					state.data.push({
-					name: name,
-					value: [index, baseTime, (baseTime += duration), duration],
-					itemStyle: {
-						normal: {
-						color: color
+						name: name,
+						value: [index, baseTime, (baseTime += duration), duration],
+						itemStyle: {
+							normal: {
+								color: color
+							}
 						}
-					}
 					});
 				}
 				baseTime += Math.round(Math.random() * 2000);
 			}
-			});
+		});
 		console.log(state.data);
 		function renderItem(params, api) {
 			var categoryIndex = api.value(0);
@@ -158,8 +167,8 @@ export default {
 									console.log(val.value[3])
 									return val.value[3] + ' ms';
 								},
-								textStyle:{
-									color:'#fff',
+								textStyle: {
+									color: '#fff',
 								}
 							},
 							itemStyle: {

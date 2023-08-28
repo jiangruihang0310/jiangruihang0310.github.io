@@ -28,6 +28,7 @@ export default {
 					"2023-08-24 00:02:00",
 					"2023-08-24 00:03:00",
 					"2023-08-24 00:04:00",
+					
 				]
 		},
 		data:{ // 默认启停图数据格式   0代表停止    1代表启动   -1无信号
@@ -43,7 +44,7 @@ export default {
 			default:()=>'100%'
 		},
 		customHeight:{
-			type:String,
+			type:Number | String,
 			default:()=>30
 		}
 	},
@@ -63,37 +64,9 @@ export default {
 					return {
 						name: "设备运行状态",
 						itemStyle: {
-							color: item == '0' ? new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-								{
-									offset: 0,
-									color: 'rgb(0, 0, 255)'
-								},
-								{
-									offset: 1,
-									color: 'rgb(65, 105, 225)'
-								}
-							]) : item == '1' ? new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-								{
-									offset: 0,
-									color: 'rgb(34, 139, 34)'
-								},
-								{
-									offset: 1,
-									color: 'rgb(0, 250, 154)'
-								}
+							color: item == '0' ? '#4D7BBD': item == '1' ? '#21DE73' : '#ccc'
 
-							]) : new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-								{
-									offset: 0,
-									color: 'rgb(169, 169, 169)'
-								},
-								{
-									offset: 1,
-									color: 'rgb(128, 128, 128)'
-								}
-							])
-
-						}, value: [Number(item), props.xAxis[index],props.xAxis[index+1]]
+						}, value: [Number(item), props.xAxis[index],methods.endTime(index)]
 					}
 				})
 				// echart配置
@@ -160,7 +133,7 @@ export default {
 						axisLine: {
 							show: false,
 							lineStyle: {
-								show: false,
+								show: true,
 								color: '#fff',
 							}
 						},
@@ -194,7 +167,7 @@ export default {
 								var end = api.coord([api.value(2), categoryIndex]);
 								var height = api.size([0, 1])[1] * 5;
 								var containerHeight = api.getHeight()/4; // 获取容器高度
-								var customHeight = props.customHeight; // 自定义图形的固定高度
+								var customHeight = Number(props.customHeight); // 自定义图形的固定高度
 								// console.log(api.style), '2222');
 								return {
 									type: 'rect',// 表示这个图形元素是矩形。还可以是 'circle', 'sector', 'polygon' 等等。
@@ -227,6 +200,22 @@ export default {
 				if (option && typeof option === "object") {
 					myChart.setOption(option, true);
 				}
+			},
+			endTime(index){
+				if(index==props.xAxis.length-1){
+					props.xAxis.push(methods.getData(new Date(props.xAxis[index]).getTime()+1000))
+					return methods.getData(new Date(props.xAxis[index]).getTime() + 1000)
+				}else{
+					console.log(props.xAxis[index+1]);
+					return props.xAxis[index+1]
+				}
+			},
+			getData(n) {
+				let now = new Date(n),
+				y = now.getFullYear(),
+				m = now.getMonth() + 1,
+				d = now.getDate();
+				return y + "-" + (m < 10 ? "0" + m : m) + "-" + (d < 10 ? "0" + d : d) + " " + now.toTimeString().substr(0, 8);
 			}
 		}
 		onMounted(() => {
@@ -245,6 +234,6 @@ export default {
 <style lang="scss" scoped>
 .start_stop{
 	width: 100%;
-	height: 100%;
+	height: 30%;
 }
 </style>
