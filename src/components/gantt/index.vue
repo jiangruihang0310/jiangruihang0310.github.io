@@ -16,7 +16,7 @@ export default {
 			default: () =>
 				+new Date("2023-08-24 00:00:00")
 		},
-		data: { // 曲线数据
+		data: { // 曲线数据结构示例
 			type: Array,
 			default: () => [
 				[
@@ -38,7 +38,7 @@ export default {
 				[{ name: 'C', value: 2556 }, { name: 'B', value: 2593 }, { name: 'A', value: 9782 }, { name: 'A', value: 3298 }, { name: 'B', value: 6573 }, { name: 'C', value: 4782 }]
 			]
 		},
-		dataCount: {  // 控制甘特图一列显示几个
+		dataCount: {  // 甘特图一列显示的条数
 			type: Number,
 			default: () => 6
 		}
@@ -49,6 +49,7 @@ export default {
 			data: []
 		})
 		let startTime = new Date(props.xAxis).getTime()
+		// 处理数据结构  处理成这样的结构[{name:"A",value:[index(下标),baseTime(开始时间),endTime(结束时间)]},{name:"B",value:[index(下标),baseTime(开始时间),endTime(结束时间)]}]
 		props.yAxis.forEach(function (category, index) {
 			var baseTime = startTime;
 			for (var i = 0; i < props.dataCount; i++) {
@@ -71,6 +72,7 @@ export default {
 			}
 		});
 		console.log(state.data);
+		// 自定义图形
 		function renderItem(params, api) {
 			var categoryIndex = api.value(0);
 			var start = api.coord([api.value(1), categoryIndex]);
@@ -160,6 +162,7 @@ export default {
 						{
 							type: 'custom',
 							renderItem: renderItem,
+							// 在图表下显示值
 							label: {
 								show: true,
 								position: 'bottom',

@@ -3,24 +3,9 @@
 </template>
 
 <script>
-import * as Echarts from 'echarts'
 export default {
-	data(){
-		return{
+	setup(){
 
-		}
-	},	
-	mounted(){
-
-	},
-	methods:{
-
-	},
-	watch:{
-		dataList(news,old){}
-	},
-	props:{
-		
 	}
 }
 </script>

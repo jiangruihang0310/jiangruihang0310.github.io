@@ -122,7 +122,7 @@ export const addGLTFHandler = (gltfPath, GltfFile) => {
 					// object.parent.add(mesh);
 					// 开启反光模式
 					// object.material.transparent = true;
-        			// object.material.opacity = 15;
+        			object.material.opacity = 10;
 					object.castShadow = true
 					object.receiveShadow = true
 					object.material.reflectivity=1		
@@ -142,9 +142,9 @@ export const addGLTFHandler = (gltfPath, GltfFile) => {
 }
 
 export const render = () => {
-	// requestAnimationFrame(render)
+	// requestAnimationFrame(render) 
 	const FPS = 30
-	const renderT = 0.000000000001 / FPS // 单位秒  间隔多长时间渲染渲染一次
+	const renderT = 0.001 / FPS // 单位秒  间隔多长时间渲染渲染一次
 	let timeS = 0
 	const T = clock.getDelta()
 	timeS = timeS + T

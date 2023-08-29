@@ -1,12 +1,12 @@
-<template>
+<templakte>
 	<div class="mySwiper">
-		<swiper ref="mySwiper" v-bind:options="swiperOptions">
+		<swiper ref="mySwiper" :options="swiperOptions">
 			<swiper-slide v-for="(item, index) in 5" v-bind:key="index">
 				{{ item }}
 			</swiper-slide>
 		</swiper>
 	</div>
-</template>
+</templakte>
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'

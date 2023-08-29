@@ -16,7 +16,7 @@ export default {
 				bottom: '20%',
 			}}
 		},
-		title:{
+		title:{ //名称
 			type:String,
 			default:()=>'启停信号'
 		},
@@ -28,34 +28,29 @@ export default {
 					"2023-08-24 00:02:00",
 					"2023-08-24 00:03:00",
 					"2023-08-24 00:04:00",
-					
 				]
 		},
 		data:{ // 默认启停图数据格式   0代表停止    1代表启动   -1无信号
 			types:Array,
 			default:()=>["0","1","1",'-1','-1']
 		},
-		width:{
+		width:{//图表宽度
 			type:String,
 			default:()=>'100%'
 		},
-		height:{
+		height:{  // 图表总高度
 			type:String,
 			default:()=>'100%'
 		},
-		customHeight:{
+		customHeight:{ // 图表内启停图高度
 			type:Number | String,
-			default:()=>30
+			default:()=> 30
 		}
 	},
 	setup(props) {
 		// var dom = document.getElementById("containers");
 		const line = ref('')
-
-		var app = {};
-		const state = reactive({
-
-		})
+		const state = reactive({})
 		const methods = {
 			drawing() {
 				var myChart = echarts.init(line.value);
@@ -65,7 +60,6 @@ export default {
 						name: "设备运行状态",
 						itemStyle: {
 							color: item == '0' ? '#4D7BBD': item == '1' ? '#21DE73' : '#ccc'
-
 						}, value: [Number(item), props.xAxis[index],methods.endTime(index)]
 					}
 				})
@@ -73,8 +67,6 @@ export default {
 				var option = {
 					title: {
 						// text: '当前设备运行状态表',
-						left: 'left',
-						// top: '%',
 						left: '10%'
 					},
 					color: colors,
@@ -83,7 +75,7 @@ export default {
 							const str = params.value[0] == '0' ? "停机" : params.value[0] == '1' ?'启动' : "无信号"
 							const color = params.value[0] == '0' ? colors[1] : params.value[0] == '1' ?colors[0] :colors[2]
 							return params.value[1] + '<br/>' + params.name + `：<span style='display: inline-block;width:15px;height:15px;background:${color};border-radius:50%;transform: translateY(3px);'></span>` + `<span style='margin-left:5px;display: inline-block;'>${str}</span>`;
-						}//数据的值`
+						}//数据的值自定义数据格式`
 					},
 					legend: {//图例
 						data: ['运行', '停机', '无信号'],
@@ -202,11 +194,11 @@ export default {
 				}
 			},
 			endTime(index){
+				const arr=props.xAxis
 				if(index==props.xAxis.length-1){
-					props.xAxis.push(methods.getData(new Date(props.xAxis[index]).getTime()+1000))
+					arr.push(methods.getData(new Date(props.xAxis[index]).getTime() + 1000))
 					return methods.getData(new Date(props.xAxis[index]).getTime() + 1000)
 				}else{
-					console.log(props.xAxis[index+1]);
 					return props.xAxis[index+1]
 				}
 			},

@@ -29,8 +29,8 @@ export default {
 			// 翻转
 			if (diff > 0 && (curTranslate - lastTranslate < 0)) {
 				emoji.style = `--emoji: "${generateRandomEmoji()}"`;
-				body.style = `--bg: ${generateRandomColor()}`;
-				body.setAttribute('class', bgArr[Math.floor(Math.random() * bgArr.length)]);
+				// body.style = `--bg: ${generateRandomColor()}`;
+				// body.setAttribute('class', bgArr[Math.floor(Math.random() * bgArr.length)]);
 			}
 
 			window.requestAnimationFrame(aniFun);
