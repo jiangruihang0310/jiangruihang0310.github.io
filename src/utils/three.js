@@ -122,7 +122,7 @@ export const addGLTFHandler = (gltfPath, GltfFile) => {
 					// object.parent.add(mesh);
 					// 开启反光模式
 					// object.material.transparent = true;
-        			object.material.opacity = 10;
+        			// object.material.opacity = 10;
 					object.castShadow = true
 					object.receiveShadow = true
 					object.material.reflectivity=1		

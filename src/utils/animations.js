@@ -13,14 +13,14 @@ const Animations = {
     })
     tween.to(
       {
-        x1: newP.x,
-        y1: newP.y,
-        z1: newP.z,
-        x2: newT.x,
-        y2: newT.y,
-        z2: newT.z
+        x1: newP.x, // 目标X
+        y1: newP.y, // 目标Y
+        z1: newP.z, // 目标Z
+        x2: newT.x, // 目标控制点的中心点x
+        y2: newT.y, // 目标控制点的中心点Y
+        z2: newT.z  // 目标控制点的中心点Z
       },
-      time
+      time // 移动时间
     )
     tween.onUpdate(function (object) {
       camera.position.x = object.x1
