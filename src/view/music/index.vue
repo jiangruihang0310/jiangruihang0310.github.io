@@ -169,32 +169,32 @@ export default {
 							name: "克林",
 							artist: "棱镜乐队",
 							cover: 'https://p1.music.126.net/6VTLVzDcp8ZtKVPBLOF5eg==/109951163203484145.jpg',
-							source: 'http://m804.music.126.net/20230904105617/327879b1159794ce3c9af610aa9c5a97/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/28481815936/06c2/fefa/d2c5/a64b12e74410c8ee372bc664b0d7f595.m4a?authSecret=0000018a5e07b3ba1b6e0aaba132147d',
-							url: "http://m804.music.126.net/20230904105617/327879b1159794ce3c9af610aa9c5a97/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/28481815936/06c2/fefa/d2c5/a64b12e74410c8ee372bc664b0d7f595.m4a?authSecret=0000018a5e07b3ba1b6e0aaba132147d",
+							source: 'static/mp4/克林.m4a',
+							url: "static/mp4/克林.m4a",
 							favorited: true
 						},
 						{
 							name: "天天",
 							artist: "陶喆",
 							cover: 'https://p1.music.126.net/6pIcF4ZAL5euujMUNSt8PQ==/109951164124479906.jpg?param=130y130',
-							source: 'http://m804.music.126.net/20230904105309/4ca5c1f50f15afcabe54b69c78e3cf30/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/17152319038/1227/d3a5/5a87/a1528f56c1ad9187a908de1dd91dacd8.m4a?authSecret=0000018a5e04d4b515000aaba5fb246b',
-							url: "http://m804.music.126.net/20230904105309/4ca5c1f50f15afcabe54b69c78e3cf30/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/17152319038/1227/d3a5/5a87/a1528f56c1ad9187a908de1dd91dacd8.m4a?authSecret=0000018a5e04d4b515000aaba5fb246b",
+							source: 'static/mp4/天天.m4a',
+							url: "static/mp4/天天.m4a",
 							favorited: true
 						},
 						{
 							name: "小镇姑娘",
 							artist: "陶喆",
 							cover: 'https://p1.music.126.net/6pIcF4ZAL5euujMUNSt8PQ==/109951164124479906.jpg?param=130y130',
-							source: 'http://m704.music.126.net/20230904105439/2444b0c20292c6a81a405298d33b875f/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/17152369590/fa0a/614d/0700/e7f659fb7095cadad8bb236be38ffc5b.m4a?authSecret=0000018a5e0633a902690aa460ba1a40',
-							url: "http://m704.music.126.net/20230904105439/2444b0c20292c6a81a405298d33b875f/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/17152369590/fa0a/614d/0700/e7f659fb7095cadad8bb236be38ffc5b.m4a?authSecret=0000018a5e0633a902690aa460ba1a40",
+							source: 'static/mp4/小镇姑娘.m4a',
+							url: "static/mp4/小镇姑娘.m4a",
 							favorited: true
 						},
 						{
 							name: "迷途羔羊",
 							artist: "顽童",
 							cover: require('@/assets/迷途羔羊.jpeg'),
-							source: 'http://m804.music.126.net/20230904105526/78731a1aa8438c019638f8e58859265e/jdyyaac/obj/w5rDlsOJwrLDjj7CmsOj/28481694572/33ca/58af/1c34/d62bbfc462c543e7b934894aeaadd0c6.m4a?authSecret=0000018a5e06eaf001bf0aaba56418f4',
-							url: "https://www.youtube.com/watch?v=z3wAjJXbYzA",
+							source: 'static/mp4/迷途羔羊.m4a',
+							url: "static/mp4/迷途羔羊.m4a",
 							favorited: true
 						},
 					],
@@ -379,7 +379,7 @@ body {
 	box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
 	border-radius: 15px;
 	padding: 30px;
-	min-width: 410px;
+	min-width: 550px;
 	height: 480px;
 	display: flex;
 	align-items: center;
