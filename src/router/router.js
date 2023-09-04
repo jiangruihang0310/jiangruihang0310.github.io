@@ -12,6 +12,7 @@ import ChatRoom from '@/view/chatroom'
 import Svg from '@/view/svg'
 import DingTalk from '@/view/DingTalk'
 import Music from '@/view/music'
+import Face from '@/components/Face'
 const routes=[
 	{
 		path:'/',
@@ -78,6 +79,11 @@ const routes=[
 		path:"/music",
 		name:"音乐",
 		component:Music
+	},
+	{
+		path:"/face",
+		name:'人脸识别',
+		component:Face
 	},
 	{ path: '*', name: 'not-found', component: NotFound }
 ]
