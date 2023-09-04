@@ -21,7 +21,7 @@ module.exports = defineConfig({
 	.set("components", resolve("src/components"));
   },
   devServer:{
-	proxy:'https://juejin.cn/web/user/update/user_info/'
+	proxy:'http://localhost:3000'
 	
   }
 })
