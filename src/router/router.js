@@ -13,16 +13,22 @@ import Svg from '@/view/svg'
 import DingTalk from '@/view/DingTalk'
 import Music from '@/view/music'
 import Face from '@/components/Face'
+import Log from '@/view/about/log'
 const routes=[
 	{
-		path:'/',
+		path:"/",
+		name:"MUSIC",
+		component:Music
+	},
+	{
+		path:'/echart',
 		name:'echarts',
 		component: Echats,
 		meta:{name:'启停图'}
 	},
 	{
-		path:'/home',
-		name:'home',
+		path:'/emoji',
+		name:'emoji',
 		component:HomeComponent	
 	},
 	{
@@ -75,15 +81,16 @@ const routes=[
 		name:'DingTalk',
 		component:DingTalk
 	},
-	{
-		path:"/music",
-		name:"音乐",
-		component:Music
-	},
+
 	{
 		path:"/face",
 		name:'人脸识别',
 		component:Face
+	},
+	{
+		path:"/log",
+		name:'log',
+		component:Log
 	},
 	{ path: '*', name: 'not-found', component: NotFound }
 ]

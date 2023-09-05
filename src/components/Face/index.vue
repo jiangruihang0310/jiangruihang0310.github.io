@@ -22,7 +22,6 @@ import {
 	draw,
 	SsdMobilenetv1Options,
 } from 'face-api.js';
-import * as faceapi from 'face-api.js'
 export default {
 	data() {
 		return {
@@ -211,7 +210,7 @@ export default {
 			console.log(files);
 			console.log(image);
 			const detectResult= false
-			//调用接口传入截取的人脸头像进行检测
+			//调用接口传入截取的人脸头像进行检测f
 			// const detectResult = await this.computedService.faceDetect(
 			// 	this.formId,
 			// 	files

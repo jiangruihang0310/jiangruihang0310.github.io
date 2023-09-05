@@ -50,7 +50,7 @@
             stroke="#00e9f9"
           />
         </svg>
-        <svg
+        <!-- <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.0"
           width="1920px"
@@ -101,7 +101,7 @@
 			  class="flowing-path3"
             />
           </g>
-        </svg>
+        </svg> -->
         <!-- 222 -->
         <svg
           version="1.1"
@@ -189,7 +189,7 @@ export default {
       currentIndex: 0,
       svgData: [
         [
-          "s",
+          "200,0 200,30 853,30 853,97",
           "180,0 180,50 753,50 753,97",
           "160,0 160,70 580,70 580,97",
           "140,0 140,90 405,90 405,96",
@@ -249,7 +249,7 @@ export default {
   background-repeat: no-repeat;
   background-position: 50% 90%;
   position: relative;
-  background: rgba(0, 0, 0, 0.8);
+//   background: rgba(0, 0, 0, 0.8);
 }
 .title {
   padding-top: 30px;
@@ -271,7 +271,7 @@ export default {
     color: #fff;
     font-size: 24px;
     font-family: MicrosoftYaHei;
-    opacity: 0.6;
+    opacity: 0.5;
   }
   .active {
     opacity: 1;

@@ -189,7 +189,6 @@ export const destroy = () => {
 	// document.querySelector('canvas').remove()
 	scene.clear()
 	controls.dispose()
-	camera.remove()
 	// light.dispose()
 	renderer.dispose()
 	renderer.forceContextLoss()
