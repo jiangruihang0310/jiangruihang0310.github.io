@@ -9,7 +9,7 @@ import infiniteScroll from 'vue-infinite-scroll'
 import vueSeamlessScroll from 'vue-seamless-scroll' // 循环滚动
 import 'videojs-contrib-hls'
 import VideoPlayer from 'vue-video-player'
- 
+ import '@/assets/css/index.css'
 require('video.js/dist/video-js.css')
  
 // require('vue-video-player/src/custom-theme.css')

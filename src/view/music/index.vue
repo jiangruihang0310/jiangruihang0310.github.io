@@ -1,6 +1,6 @@
 <template>
 	<div class="music">
-		<div class="wrapper">
+		<div class="wrappers">
 			<div class="player">
 			<div class="player__top">
 				<div class="player-cover">
@@ -329,9 +329,6 @@ export default {
 
 <style lang="scss" scoped>
 .music {
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 1);
 	color: #fff;
 	position: relative;
 }
@@ -360,7 +357,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
+	// min-height: 100vh;
 	// background: url(../img/bg.png) no-repeat center;
 	background-size: cover;
 
@@ -370,23 +367,9 @@ body {
 		flex-direction: column;
 	}
 }
-.wrapper {
-	background: #eef3f7;
-	width: 50%;
-	min-height: 80%;
-	// box-shadow: 0px 55px 75px -10px rgba(76, 70, 124, 0.5);
-	// box-shadow: 0px 55px 105px 10px rgba(76, 70, 124, 0.35);
-	box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
-	border-radius: 15px;
-	padding: 30px;
-	min-width: 550px;
-	height: 480px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+// 1
 .player {
-	background: #eef3f7;
+	background: #000;
 	width: 410px;
 	min-height: 480px;
 	// box-shadow: 0px 55px 75px -10px rgba(76, 70, 124, 0.5);
