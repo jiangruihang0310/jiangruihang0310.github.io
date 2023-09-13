@@ -67,13 +67,19 @@ export default {
 							description: "汽车模型场景",
 							path: '/scene'
 						},
+						{
+							name:'THEME',
+							id:8,
+							description: "主题切换",
+							path:"/canvas"
+						},
 					]
 				},
 				{
 					name: "ABOUT",
 					children: [
 						{
-							id: 8,
+							id: 9,
 							name: "log",
 							description: 'log',
 							path: "/log"
@@ -101,11 +107,12 @@ export default {
 
 <style lang="scss" scoped>
 .layout-left {
-	width: 220px;
+	width: 280px;
 	height: 100%;
-	color: #fff;
+	color: var(--color);
 	padding: 20px;
-	border-right: 1px solid #fff;
+	border-right: 1px solid var(--border);
+	padding: 30px;
 }
 
 .title {
@@ -141,7 +148,7 @@ export default {
 	.active {
 		transition: all 0.5s;
 		transform: translate(1.1);
-		color: rgba(73, 177, 245,1);
+		color: var(--active);
 	}
 }
 </style>

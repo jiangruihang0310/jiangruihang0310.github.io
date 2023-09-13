@@ -329,20 +329,9 @@ export default {
 
 <style lang="scss" scoped>
 .music {
-	color: #fff;
+	color: var(--color);
 	position: relative;
 }
-
-body {
-	// background: #e1e7ec;
-	background: #dfe7ef;
-	font-family: "Bitter", serif;
-}
-
-* {
-	box-sizing: border-box;
-}
-
 .icon {
 	display: inline-block;
 	width: 1em;
@@ -369,7 +358,7 @@ body {
 }
 // 1
 .player {
-	background: #000;
+	background: var(--bgs);
 	width: 410px;
 	min-height: 480px;
 	// box-shadow: 0px 55px 75px -10px rgba(76, 70, 124, 0.5);

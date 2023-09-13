@@ -1,0 +1,41 @@
+html.light {
+	--slide-ease: cubic-bezier(.4,-0.3,.6,1.3);
+    /* --slide-ease: cubic-bezier(.8,-0.3,.2,1.3); */
+	  --easing: var(--slide-ease);
+	  --speed: 0.5s;
+	  --width: clamp(120px, 45vmin, 100px);
+	  --ar: 8 / 3;
+	  --ray: hsl(0 0% 100% / 0.5);
+	  --sun: hsl(47, 91%, 58%);
+	  --moon: hsl(212, 13%, 82%);
+	  --crater: hsl(221, 16%, 68%);
+	  --bg: #E0E5EC;
+	  --bgs: #E0E5EC;
+	  --bear-speed: 10s;
+	  --color: hsl(219 30% 20%);
+	  --active:rgb(80, 114, 237);
+	  /* --dark: */
+	  --border:#fff;
+	  --opacity:1
+	}
+html.dark {
+	--slide-ease: cubic-bezier(.4,-0.3,.6,1.3);
+/* --slide-ease: cubic-bezier(.8,-0.3,.2,1.3); */
+	--easing: var(--slide-ease);
+	--speed: 0.5s;
+	--width: clamp(120px, 45vmin, 100px);
+	--ar: 8 / 3;
+	--ray: hsl(0 0% 100% / 0.5);
+	--sun: hsl(47, 91%, 58%);
+	--moon: hsl(212, 13%, 82%);
+	--crater: hsl(221, 16%, 68%);
+	--bg: rgb(24, 24, 24);
+	--bgs: #101010;
+	--bear-speed: 10s;
+	--color: hsl(0, 0%, 100%);
+	/* --dark: */
+	--active:rgba(73, 177, 245,1);
+	--border:rgb(53,54,56);
+	--opacity:0.98
+
+	}

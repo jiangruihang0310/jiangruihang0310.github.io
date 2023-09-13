@@ -29,7 +29,10 @@ body{
 	margin: 0 !important;
 }
 #app {
-	background:url('~@/assets/bg.jpg') no-repeat ;
+	// https://rick-chou.github.io/one-piece-react/assets/bg-f8da1978.jpg
+	// background:url('~@/assets/bg.jpg') no-repeat ;
+	background:url('https://rick-chou.github.io/one-piece-react/assets/bg-f8da1978.jpg') no-repeat ;
+	background-color: rgba(18, 21, 39, 0.86);
 	background-size: 100% 100%;
 	background-position: center center;
     background-size: cover;
@@ -46,7 +49,7 @@ body{
     height: 100vh;
     overflow: hidden;
     user-select: none;
-	opacity: 0.67;
+	opacity: 0.95;
 	color: #fff !important;
 	font-size:16px;
 }

@@ -1,14 +1,14 @@
 <template>
 	<div class="canvas">
-		<Signature/>
+		<Theme/>
 	</div>
 </template>
 
 <script>
-import Signature from '@/components/signature'
+import Theme from '@/components/theme'
 export default {
 	components:{
-		Signature
+		Theme
 	}
 }
 </script>
@@ -18,6 +18,8 @@ export default {
 		position: relative;
 		width: 100%;
 		height: 100%;
-		
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 </style>

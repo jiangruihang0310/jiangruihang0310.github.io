@@ -1,25 +1,30 @@
 <template>
 	  <div class="wrapper">
 		  <Left/>
+		  <div class="wrappers">
+			<Top/>
 		  <div class="content">
 			  <router-view />
+		  </div>
 		  </div>
 	  </div>
   </template>
   
   <script>
+  import Top from './top'
   import Left from './left'
   export default {
 	name: "layout",
 	components:{
-		Left
+		Left,
+		Top
 	}
   };
   </script>
   
   <style lang="scss" scoped>
   .wrapper{
-	  background-color:#16171a;
+	  background-color:var( --bg );
 	  min-width: 65vw;
 	  max-width: 65vw;
 	  max-height: 900px;
@@ -32,12 +37,16 @@
 	  font-weight: 500;
 	  box-shadow: rgba(0, 0, 0, 0.3) 0px 20px 50px;
 	  position: relative;
-	  opacity: 0.97;
-	  padding: 20px;
+	  opacity: var(--opacity );
+	//   padding: 20px;
   }	
-  .content{
-	height: 100%;
+  .wrappers{
 	width: calc(100% - 220px);
+	position: relative;
+  }
+  .content{
+	height: calc(100% - 80px);
+	width: calc(100%);
 	display: flex;
 	align-content: center;
 	justify-content: center;
