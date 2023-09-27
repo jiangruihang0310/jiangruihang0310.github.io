@@ -342,6 +342,7 @@ export default {
 }
 
 .music {
+	overflow: hidden;
 	width: 100%;
 	display: flex;
 	align-items: center;

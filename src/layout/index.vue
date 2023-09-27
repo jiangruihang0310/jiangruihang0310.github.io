@@ -53,7 +53,7 @@
 	overflow-y:auto;
 	overflow-x:hidden;
   }
-  ::-webkit-scrollbar {
+  ::-webkit-scrollbar {	
     width: 10px;
     height: 10px;
 }

@@ -62,15 +62,9 @@ export default {
 							path:'/emoji'
 						},
 						{
-							name: "Car-model-scene",
-							id: 7,
-							description: "汽车模型场景",
-							path: '/scene'
-						},
-						{
-							name:'THEME',
-							id:8,
-							description: "主题切换",
+							name:"Shader",
+							description:"着色器",
+							id:7,
 							path:"/canvas"
 						},
 					]
