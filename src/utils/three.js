@@ -7,6 +7,8 @@ import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.j
 import { initExplodeModel } from '@/utils/split'
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader"
 import * as TWEEN from '@tweenjs/tween.js'
+import { KTX2Loader } from 'three/examples/jsm/loaders/KTX2Loader.js';
+
 let scene
 let camera
 let renderer
@@ -36,40 +38,40 @@ export function init(dom, skys) {
 	renderer.setSize(parentWidth, parentHeight) // 设置渲染的尺寸
 	renderer.shadowMap.type = THREE.PCFSoftShadowMap // 阴影类型（处理运用Shadow Map产生的阴影锯齿）
 	renderer.physicallyCorrectLights = true;
+	renderer.outputEncoding = THREE.sRGBEncoding;
 	dom.appendChild(renderer.domElement)
 	camera = new THREE.PerspectiveCamera(45, parentWidth / parentHeight, 1, 20000)
 	camera.position.set(-150, 0, 150) //
 	// 设置场景
 	scene = new THREE.Scene()
-	if (skys) {
-		sky()
-	} else {
-		const rgbeLoader = new RGBELoader();
-		//资源较大，使用异步加载
-		rgbeLoader.loadAsync("static/hdr/warehouse.hdr").then((texture) => {
-			texture.mapping = THREE.EquirectangularReflectionMapping;
-			//将加载的材质texture设置给背景和环境
-			scene.background = texture;
-			scene.environment = texture;
-		});
-	}
+	// if (skys) {
+	// 	sky()
+	// } else {
+	// 	const rgbeLoader = new RGBELoader();
+	// 	//资源较大，使用异步加载
+	// 	rgbeLoader.loadAsync("static/hdr/warehouse.hdr").then((texture) => {
+	// 		texture.mapping = THREE.EquirectangularReflectionMapping;
+	// 		//将加载的材质texture设置给背景和环境
+	// 		scene.background = texture;
+	// 		scene.environment = texture;
+	// 	});
+	// }
 
 	// let ambientLight = new THREE.AmbientLight(0xffffff); //设置环境光
-	// ambientLight.position.set(-150,0,150)
+	// ambientLight.position.set(-500,-500,-500)
 	// scene.add(ambientLight); //将环境光添加到场景中
-	// let pointLight = new THREE.PointLight(0xffffff, 3, 3);
-	// pointLight.position.set(-150, 0, 150); //设置点光源位置
+	// // let pointLight = new THREE.PointLight(0xffffff, 1, 1);
+	// 
+	// pointLight.position.set(300, 300, 300); //设置点光源位置
 	// scene.add(pointLight); //将点光源添加至场景
 	const directionalLight = new THREE.DirectionalLight(
-		0xffffff, 3
+		0xffffff
 	)
-	directionalLight.position.set(-300, 300, 300); // 将灯光位置设置为模型的中心
+	directionalLight.castShadow = true; // default false
+	directionalLight.position.set(150,150, 150); // 将灯光位置设置为模型的中心
     
     scene.add(directionalLight);
     
-	// const hemisphereLight=new THREE.HemisphereLight(0xfffff,5)
-	// hemisphereLight.position.set(-150,0,150)
-	// scene.add(hemisphereLight)
 	// // 聚光灯
 	// spotLight = new THREE.SpotLight(0xffffff, 5)
 	// spotLight.position.set(1, 1, 20)
@@ -98,13 +100,18 @@ export const sky = () => {
 }
 export const addGLTFHandler = (gltfPath, GltfFile) => {
 	const dracoLoader = new DRACOLoader()
-	const loader = new GLTFLoader()
+	const loader = new GLTFLoader().setCrossOrigin('anonymous');
+	// dracoLoader.set
+	const ktx2Loader = new KTX2Loader();
+	ktx2Loader.setTranscoderPath('./static/basis/')
+	ktx2Loader.detectSupport(renderer);
 	// const textureLoader = new THREE.TextureLoader()
 	dracoLoader.setDecoderPath('./static/draco/')
 	dracoLoader.setDecoderConfig({ type: 'js' }) // 使用js方式解压
 	dracoLoader.preload()
 	loader.setDRACOLoader(dracoLoader)
 	loader.setMeshoptDecoder(MeshoptDecoder)
+	loader.setKTX2Loader(ktx2Loader)
 	// const textureNormal = textureLoader.load('/static/gltf/a0.jpg')
 	// let sphereMaterial = new THREE.MeshLambertMaterial( { envMap: scene.background } );
 	// renderer.compile(scene, camera)
@@ -121,13 +128,24 @@ export const addGLTFHandler = (gltfPath, GltfFile) => {
 					// const mesh = new THREE.Mesh(object.geometry, reflectionMaterial);
 					// object.parent.add(mesh);
 					// 开启反光模式
-					// object.material.transparent = true;
-        			// object.material.opacity = 10;
+					object.material.transparent = true;
+        			object.material.opacity = 10;
 					object.castShadow = true
 					object.receiveShadow = true
 					object.material.reflectivity=1		
+					 // 模型转到一定角度消失 DoubleSide 解决
+					//  object.material.side = THREE.DoubleSide;
+					//   
 					// object.material.emissive = object.material.color
 					// object.material.emissiveMap = object.material.map			
+				 // m.material.color.set(0x32FA00)
+            //材质双面
+					object.material.side = THREE.DoubleSide
+							//发光材质
+					object.material.emissive=new THREE.Color(0.1,0.1,0.1);
+					object.material.emissiveIntensity=1;
+					object.material.emissiveMap=object.material.map;
+
 				}
 			})
 			console.log(gltf);

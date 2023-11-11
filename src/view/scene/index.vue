@@ -31,10 +31,10 @@ export default {
 		destroy()
 	},
 	mounted(){
-		init(this.$refs.dom,false)
+		init(this.$refs.dom,true)
 		animate()
 		this.$nextTick(()=>{
-			addGLTFHandler('/static/gltf/car.glb','')
+			addGLTFHandler('/static/gltf/as.gltf','')
 		})
 	}
 }

@@ -27,44 +27,50 @@ export default {
 					children: [
 						{
 							name: "MUSIC",
-							id: 1,
+							id: 1123,
 							description: "音乐",
 							path: "/"
 						},
 						{
 							name: "Gantt",
-							id: 2,
+							id: 212,
 							description: "甘特图",
 							path: "/gantt"
 						},
 						{
 							name: "Status start-stop diagram",
-							id: 3,
+							id: 3453212,
 							description: "状态启停图",
-							path: "echart"
+							path: "/echart"
 						},
+						// {
+						// 	name: "Face Recognition",
+						// 	id: 44654,
+						// 	description: "人脸识别",
+						// 	path: "/face"
+						// },
 						{
-							name: "Face Recognition",
-							id: 4,
-							description: "人脸识别",
-							path: "/face"
+							name:"GLTF Model",
+							id:13545351,
+							description: "GLTF模型",
+							path:'/scene'
 						},
 						{
 							name:'Svg Flow Diagram',
 							description:"SVG流动图",
-							id:5,
+							id:545,
 							path:"/svg"
 						},
-						{
-							name:"Pulsating Emoji",
-							description:"跳动的表情包",
-							id:6,
-							path:'/emoji'
-						},
+						// {
+						// 	name:"Pulsating Emoji",
+						// 	description:"跳动的表情包",
+						// 	id:6132122345615,
+						// 	path:'/emoji'
+						// },
 						{
 							name:"Shader",
 							description:"着色器",
-							id:7,
+							id:7121,
 							path:"/canvas"
 						},
 					]
@@ -73,7 +79,7 @@ export default {
 					name: "ABOUT",
 					children: [
 						{
-							id: 9,
+							id: 91212,
 							name: "log",
 							description: 'log',
 							path: "/log"
