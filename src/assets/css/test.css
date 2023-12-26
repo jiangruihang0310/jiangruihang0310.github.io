@@ -11,6 +11,7 @@ html.light {
 	  --crater: hsl(221, 16%, 68%);
 	  --bg: #E0E5EC;
 	  --bgs: #E0E5EC;
+	  --bgo: rgba(0, 0, 0,.1);
 	  --bear-speed: 10s;
 	  --color: hsl(219 30% 20%);
 	  --active:rgb(80, 114, 237);
@@ -30,6 +31,7 @@ html.dark {
 	--moon: hsl(212, 13%, 82%);
 	--crater: hsl(221, 16%, 68%);
 	--bg: rgb(24, 24, 24);
+	--bgo: rgba(0, 0, 0,.8);
 	--bgs: #101010;
 	--bear-speed: 10s;
 	--color: hsl(0, 0%, 100%);
