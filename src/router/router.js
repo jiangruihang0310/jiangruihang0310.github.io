@@ -14,6 +14,7 @@ import DingTalk from '@/view/DingTalk'
 import Music from '@/view/music'
 import Face from '@/components/Face'
 import Log from '@/view/about/log'
+import DateCalculation from '@/view/dateCalculation'
 const routes=[
 	{
 		path:"/",
@@ -91,6 +92,11 @@ const routes=[
 		path:"/log",
 		name:'log',
 		component:Log
+	},
+	{
+		path:'/DateCalculation',
+		name:'DateCalculation',
+		component:DateCalculation
 	},
 	{ path: '*', name: 'not-found', component: NotFound }
 ]

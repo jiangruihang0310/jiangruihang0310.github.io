@@ -73,6 +73,13 @@ export default {
 							id:7121,
 							path:"/canvas"
 						},
+						{
+							name:'Date-Calculation',
+							description:'日期计算',
+							id:4541213131,
+							path:"DateCalculation"
+
+						}
 					]
 				},
 				{
@@ -85,7 +92,8 @@ export default {
 							path: "/log"
 						}
 					]
-				}
+				},
+				
 
 			],
 			id:  localStorage.getItem('id') || 1 
