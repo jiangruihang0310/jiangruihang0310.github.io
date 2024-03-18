@@ -117,7 +117,7 @@ export default {
 						data: props.xAxis
 					},
 					yAxis: {
-						name: '启停信号',
+						name: props.title,
 						type: 'value',
 						max: 1,
 						min: 0,
@@ -226,6 +226,6 @@ export default {
 <style lang="scss" scoped>
 .start_stop{
 	width: 100%;
-	height: 30%;
+	height: 100%;
 }
 </style>
