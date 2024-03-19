@@ -15,6 +15,7 @@ import Music from '@/view/music'
 import Face from '@/components/Face'
 import Log from '@/view/about/log'
 import DateCalculation from '@/view/dateCalculation'
+import CrossWindows from '@/view/crossWindows'
 const routes=[
 	{
 		path:"/",
@@ -97,6 +98,12 @@ const routes=[
 		path:'/DateCalculation',
 		name:'DateCalculation',
 		component:DateCalculation
+	},
+	{
+		path:'/crossWindows',
+		name:'CrossWiondows',
+		component:CrossWindows
+
 	},
 	{ path: '*', name: 'not-found', component: NotFound }
 ]
