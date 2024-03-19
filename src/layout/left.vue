@@ -74,6 +74,12 @@ export default {
 							path:"/canvas"
 						},
 						{
+							name:"Cross Windows",
+							description:"跨窗口",
+							id:81212,
+							path:"/crossWindows"
+						},
+						{
 							name:'Date-Calculation',
 							description:'日期计算',
 							id:4541213131,
