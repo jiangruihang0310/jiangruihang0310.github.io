@@ -3,7 +3,7 @@
 		  <Left/>
 		  <div class="wrappers">
 			<Top/>
-		  <div class="content">
+		  <div class="content" id="layout">
 			  <router-view />
 		  </div>
 		  </div>

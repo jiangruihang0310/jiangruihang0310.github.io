@@ -12,7 +12,7 @@ export default {
 			default:()=>{ return {
 				left: '10%',
 				right: '5%',
-				top: '20%',
+				top: '30%',
 				bottom: '20%',
 			}}
 		},
@@ -67,7 +67,8 @@ export default {
 				var option = {
 					title: {
 						// text: '当前设备运行状态表',
-						left: '10%'
+						left: '10%',
+						top:'5%'
 					},
 					color: colors,
 					tooltip: {//提示框
@@ -91,7 +92,7 @@ export default {
 					grid: {//绘图网格
 						left: '10%',
 						right: '5%',
-						top: '10%',
+						top: '20%',
 						bottom: '10%',
 						borderWidth: 0
 					},

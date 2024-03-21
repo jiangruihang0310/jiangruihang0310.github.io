@@ -15,8 +15,9 @@ export const init = () => {
     // 渲染器
     const renderer = new THREE.WebGLRenderer();
     renderer.setPixelRatio(devicePixelRatio);
-    renderer.setSize(innerWidth, innerHeight);
-    document.body.appendChild(renderer.domElement);
+    renderer.setSize(innerWidth-220, innerHeight-220);
+    const layout=document.getElementById('layout')
+	layout.appendChild(renderer.domElement);
 
     // const geometry = new THREE.BoxGeometry(100, 100, 100);
     // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -32,4 +33,18 @@ export const resize = (camera, renderer) => {
     camera.updateProjectionMatrix();
     renderer.setPixelRatio(devicePixelRatio);
     renderer.setSize(innerWidth, innerHeight);
+}
+export const destroy = (scene,renderer,animate) => {
+	// document.querySelector('canvas').remove()
+	scene.clear()
+	// light.dispose()
+	renderer.dispose()
+	renderer.forceContextLoss()
+	renderer.content = null
+	cancelAnimationFrame(animate) // 去除animationFrame
+	// window.removeEventListener('resize', this.onWindowResize)
+	console.log(document.querySelector('#container'));
+	document.querySelector('#layout').removeChild(document.querySelector('#layout canvas'))
+	const gl = renderer.domElement.getContext('webgl')
+	gl && gl.getExtension('WEBGL_lose_context').loseContext()
 }

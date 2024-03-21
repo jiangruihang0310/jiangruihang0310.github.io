@@ -10,7 +10,7 @@
 import BALL from '@/utils/ball.js';
 import * as win from '@/utils/win.js';
 import * as storage from '@/utils/storage.js';
-import {reactive,onMounted,toRefs,ref} from 'vue'
+import {reactive,onMounted,toRefs,ref,onUnmounted} from 'vue'
 export default {
 	setup() {
 		const state=reactive({
@@ -81,7 +81,7 @@ export default {
 					const { screenX, screenY } = window;
 					const currentWin = storage.get(key);
 					// 判断当前窗口坐标是否有变化（即窗口是否移动），若有变化，则更新storage及ball数据
-					if (currentWin.screenX != screenX || currentWin.screenY != screenY) {
+					if (currentWin&&(currentWin.screenX != screenX || currentWin.screenY != screenY)) {
 						const value = { key:key, screenX, screenY };
 						storage.set(key, value);
 						balls.find(item => item.key == key).win = value;
@@ -116,11 +116,16 @@ export default {
 						screenX, screenY, innerWidth, innerHeight,
 						storage: storage.getAll(),
 					}, null, 2);
-				}
+				},
 		}
 		onMounted(()=>{
 			state.alert= document.getElementById('alert1');
 			setTimeout(() => methods.init(), 500);
+		})
+		onUnmounted(()=>{
+			win.destroy(state.scene,state.renderer,methods.animate)
+			localStorage.removeItem('demo')
+			cancelAnimationFrame(methods.animate)
 		})
 		return {...toRefs(state),...methods}
 	},
@@ -128,5 +133,13 @@ export default {
 </script>
 
 <style>
-
+.goback{
+	z-index: 99999;
+	position: absolute;
+	
+}
+.alert1{
+	width: 90vw;
+	height: 90vh;
+}
 </style>

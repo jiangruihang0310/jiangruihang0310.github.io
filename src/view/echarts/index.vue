@@ -6,6 +6,7 @@
 		<div class="shishi">
 			<div class="main" id="main"></div>
 		</div>
+		<div class="chat"></div>
 	</div>
 </template>
 
@@ -1846,18 +1847,18 @@ export default {
 
 				// 初始化数据，data1和data2分别表示两条曲线的数据
 				var data1 = [];
-				var data2 = [];
 				var maxDataTime = 15; // 设置数据老化时间
 
 				// 创建初始数据
-				// function createInitialData() {
-				// 	var now = new Date();
-				// 	for (var i = 0; i < 1; i++) {
-				// 		var time = new Date(now - i * 1000);
-				// 		data1.push([time.getTime(),(Math.random() * 100).toFixed(0)]); // 新数据在数组前面插入
-				// 		// data2.push([time.getTime() + 300, (Math.random() * 100).toFixed(0)]);
-				// 	}
-				// }
+				function createInitialData() {
+					var now = new Date();
+					for (var i = 0; i < 15; i++) {
+						var time = new Date(now - i * 1000);
+						data1.unshift([time.getTime(),(Math.random() * 100).toFixed(0)]); // 新数据在数组前面插入
+
+					}
+				}
+				createInitialData()
 
 				// createInitialData(); // 创建初始数据
 
@@ -1865,7 +1866,7 @@ export default {
 				setInterval(function () {
 					var now = new Date();
 					var time = new Date(now);
-					data1.push([time.getTime(), (Math.random() * 100).toFixed(0)]); // 新数据在数组前面插入
+					// data1.push([time.getTime(), (Math.random() * 100).toFixed(0)]); // 新数据在数组前面插入
 					var random_time = Math.random() * 100
 					// data1.push([time.getTime(), Math.random() * 100]);
 					// data1.push([time.getTime() + random_time * 3, Math.random() * 100]);
@@ -1884,17 +1885,11 @@ export default {
 							break; // 跳出循环
 						}
 					}
-					while (data2.length > 0) {
-						if (time.getTime() - data2[0][0] > maxDataTime * 1000) {
-							data2.shift(); // 删除最老的数据
-						} else {
-							break; // 跳出循环
-						}
-					}
+					
 
 
 					// 计算最小值
-					var maxXValue = Math.max(...data1.concat(data2).map(item => item[0])); // 获取数据1和数据2的x轴的最大值
+					var maxXValue = Math.max(...data1.map(item => item[0])); // 获取数据1和数据2的x轴的最大值
 					var minValue = maxXValue - maxDataTime * 1000; // 计算最小值，减去一个固定值
 
 					// 更新图表，设置切换动画效果
@@ -1912,10 +1907,7 @@ export default {
 								data: data1,
 								animation: false, // 禁用动画
 							},
-							{
-								data: data2,
-								animation: false, // 禁用动画
-							}
+
 						]
 					});
 				}, 1000); // 定时器每秒执行一次
@@ -1968,15 +1960,19 @@ export default {
 	height: 100%;
 }
 .startstop{
-	height: 50%;
+	height: 33%;
 	width: 100%;
 }
 .shishi{
 	width: 100%;
-	height: 50%;
+	height: 33%;
 	.main{
 		width: 100%;
 		height: 100%;
 	}
+}
+.chat{
+	width: 100%; 
+	height: 33%;
 }
 </style>
