@@ -60,8 +60,8 @@ export default {
 			align-items: center;
 			justify-content: center;
 			cursor: pointer;
-			border: 1px solid #fff;
-			color: #fff;
+			border: 1px solid #71829e;
+			color: #71829e;
 			border-radius: 5px;
 			padding: 5px;
 			margin: 5px;

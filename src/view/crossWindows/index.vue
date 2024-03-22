@@ -1,5 +1,6 @@
 <template>
 	<div class="cross_wiondows">
+		<div class="title">开启多窗口更有意思</div>
 		<div class="warpper">
 			<div id="alert1" class="alert"></div>
 		</div>

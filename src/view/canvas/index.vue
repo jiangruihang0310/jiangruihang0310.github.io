@@ -1,11 +1,11 @@
 <template>
 	<div>
 	   <!-- 操作栏 -->
-	   <div class="typeBox">
+	   <!-- <div class="typeBox">
 		  <div v-for="(item, index) in typeList" :key="index" :class="currentType == index ? ['currentType','type'] : 'type'" @click="clickType(index)">
 			  {{item.text}}
 		  </div>
-	   </div>
+	   </div> -->
 	   <div class="dataBox" v-if='currentType'>
 		  <!-- 月日历栏 -->
 		  <calendarData></calendarData>

@@ -86,7 +86,7 @@ export default {
 							color: '#000'
 						},
 						textStyle: {
-							color: '#fff'
+							color: '#71829e'
 						}
 					},
 					grid: {//绘图网格
@@ -102,7 +102,7 @@ export default {
 						axisLine: {
 							lineStyle: {
 								show: false,
-								color: '#fff'
+								color: '#71829e'
 							}
 						},
 						axisLabel: {
@@ -127,7 +127,7 @@ export default {
 							show: false,
 							lineStyle: {
 								show: true,
-								color: '#fff',
+								color: '#71829e',
 							}
 						},
 						axisLabel: {

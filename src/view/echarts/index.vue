@@ -6,7 +6,9 @@
 		<div class="shishi">
 			<div class="main" id="main"></div>
 		</div>
-		<div class="chat"></div>
+		<div class="chat">
+			<Gantt/>
+		</div>
 	</div>
 </template>
 
@@ -14,9 +16,12 @@
 import * as echarts from 'echarts'
 import { onMounted, reactive, toRefs, ref } from 'vue'
 import StartStop from '@/components/StartStop'
+import Gantt from '@/components/gantt'
+
 export default {
 	components:{
-		StartStop
+		StartStop,
+		Gantt
 	},
 	setup() {
 		const state = reactive({

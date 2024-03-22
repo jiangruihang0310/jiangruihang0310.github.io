@@ -57,6 +57,7 @@ export default {
 		font-family:'Odibee Sans' !important;
 		width: 90%;
 		margin: 0 auto;
+		color: #71829e;
 	}
 	.title{
 		text-align: center;
@@ -92,6 +93,6 @@ export default {
 		margin-left: 120px;
 		font-family:'Odibee Sans' !important;
 		font-size:12px;
-		color: #ccc;
+		color: #71829e;
 	}
 </style>

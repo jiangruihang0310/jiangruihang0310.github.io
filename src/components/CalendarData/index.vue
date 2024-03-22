@@ -147,9 +147,11 @@
   .weekList {
 	display: flex;
 	align-items: center;
+	// background-color: #71829e;
 	.week {
 	  width: 14.285%;
-	  background-color: rgb(0, 0, 0);
+	  background-color: #152745;
+		color: #fff;
 	  padding: 10px 0;
 	  margin: 5px;
 	  text-align: center;
@@ -179,17 +181,18 @@
 	  }
 	  .contentDes {
 		// padding: 5px 0;
-		background-color: rgba(220, 245, 253, 0.3);
+		background-color: rgba(51, 80, 90, 0.3);
 	  }
 	}
 	.dateActive {
-		background-color: rgb(169, 225, 243);
+		background-color: rgba(130, 154, 193,.5);
 	}
   }
  
   .date-page{
 	width: 90%;
 	margin: 0 auto;
+	color: #71829e;
   }
   </style>
   

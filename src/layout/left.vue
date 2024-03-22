@@ -32,15 +32,9 @@ export default {
 							path: "/"
 						},
 						{
-							name: "Gantt",
-							id: 212,
-							description: "甘特图",
-							path: "/gantt"
-						},
-						{
-							name: "Status start-stop diagram",
+							name: "Chart",
 							id: 3453212,
-							description: "状态启停图",
+							description: "图表",
 							path: "/echart"
 						},
 						// {
@@ -56,22 +50,22 @@ export default {
 							path:'/scene'
 						},
 						{
-							name:'Svg Flow Diagram',
-							description:"SVG流动图",
+							name:'Calendar',
+							description:"日历",
 							id:545,
-							path:"/svg"
+							path:"/canvas"
 						},
-						// {
-						// 	name:"Pulsating Emoji",
-						// 	description:"跳动的表情包",
-						// 	id:6132122345615,
-						// 	path:'/emoji'
-						// },
+						{
+							name:"Pulsating Emoji",
+							description:"跳动的表情包",
+							id:6132122345615,
+							path:'/emoji'
+						},
 						{
 							name:"Shader",
 							description:"着色器",
 							id:7121,
-							path:"/canvas"
+							path:"/iframe"
 						},
 						{
 							name:"Cross Windows",
