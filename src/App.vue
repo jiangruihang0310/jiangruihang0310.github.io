@@ -31,7 +31,7 @@ body{
 #app {
 	// https://rick-chou.github.io/one-piece-react/assets/bg-f8da1978.jpg
 	// background:url('~@/assets/bg.jpg') no-repeat ;
-	background:url('https://rick-chou.github.io/one-piece-react/assets/bg-f8da1978.jpg') no-repeat ;
+	background:url("~@/assets/bg.jpg") no-repeat ;
 	background-color: var(--bgo) ;
 	background-size: 100% 100%;
 	background-position: center center;

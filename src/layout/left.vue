@@ -77,7 +77,14 @@ export default {
 							name:'Date-Calculation',
 							description:'日期计算',
 							id:4541213131,
-							path:"DateCalculation"
+							path:"/DateCalculation"
+
+						},
+						{
+							name:'Map',
+							description:'地图',
+							id:4541213131123,
+							path:"/map"
 
 						}
 					]

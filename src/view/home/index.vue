@@ -9,12 +9,11 @@
 </template>
 
 <script>
+import {reactive,onMounted,toRefs} from 'vue'
 export default {
-	data() {
-
-	},
-	mounted() {
-		const body = document.querySelectorAll('body')[0];
+	setup(){
+		onMounted(()=>{
+			const body = document.querySelectorAll('body')[0];
 		const container = document.querySelectorAll('.g-container')[0];
 		const emoji = document.querySelectorAll('.g-emoji')[0];
 		const bgArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
@@ -65,10 +64,9 @@ export default {
 		}
 
 		window.requestAnimationFrame(aniFun);
-	},
-	methods: {
-
+		})
 	}
+
 }
 </script>
 
