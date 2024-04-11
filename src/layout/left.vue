@@ -27,7 +27,7 @@ export default {
 					children: [
 						{
 							name: "MUSIC",
-							id: 1123,
+							id: 1,
 							description: "音乐",
 							path: "/"
 						},
