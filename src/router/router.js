@@ -110,7 +110,7 @@ const routes=[
 		path:'/SceneGraph',
 		name:'SceneGraph',
 		component:SceneGraph
-	}
+	},
 	{ path: '*', name: 'not-found', component: NotFound }
 ]
 export default routes

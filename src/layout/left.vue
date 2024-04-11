@@ -50,6 +50,12 @@ export default {
 							path:'/scene'
 						},
 						{
+							name:'Scene Graph',
+							id:45345321,
+							description:'场景图',
+							path:'/SceneGraph'
+						},
+						{
 							name:'Calendar',
 							description:"日历",
 							id:545,
