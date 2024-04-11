@@ -24,6 +24,7 @@ module.exports = defineConfig({
 	proxy:'http://localhost:3000'
 	
   },
+  configureWebpack: (config) => {config.module.rules.push({test: /\.glsl$/,use: [{loader: "webpack-glsl-loader",},],});},
   pages: {
     index: {
       entry: 'src/main.js', // 入口文件

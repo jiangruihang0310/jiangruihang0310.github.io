@@ -16,6 +16,7 @@ import Face from '@/components/Face'
 import Log from '@/view/about/log'
 import DateCalculation from '@/view/dateCalculation'
 import CrossWindows from '@/view/crossWindows'
+import SceneGraph from '@/view/SceneGraph'
 const routes=[
 	{
 		path:"/",
@@ -105,6 +106,11 @@ const routes=[
 		component:CrossWindows
 
 	},
+	{
+		path:'/SceneGraph',
+		name:'SceneGraph',
+		component:SceneGraph
+	}
 	{ path: '*', name: 'not-found', component: NotFound }
 ]
 export default routes

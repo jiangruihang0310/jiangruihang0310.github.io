@@ -2,7 +2,7 @@
 	<div class="item">
 		<!-- <img src="@/assets/biglogo.png"/> -->
 		<el-table :data="tableData" border class="top" :header-cell-style="{ background: '#eee', color: '#000000' }">
-			<el-table-column prop="name" label="姓名">
+			<el-table-column prop="name" label="姓名" show-overflow-tooltip :tooltip=true>
 			</el-table-column>
 			<el-table-column prop="address" label="地址">
 			</el-table-column>
@@ -11,7 +11,7 @@
 		</el-table>
 		<vue-seamless-scroll :data="tableData" :class-option="classOption" class="seamless-warp">
 			<el-table :data="tableData" border class="bottom" :header-cell-style="{ background: '#eee', color: '#000000' }">
-				<el-table-column prop="name" label="姓名">
+				<el-table-column prop="name" label="姓名" :tooltip=true  show-overflow-tooltip>
 				</el-table-column>
 				<el-table-column prop="address" label="地址">
 				</el-table-column>
@@ -48,6 +48,7 @@ export default {
 					prop: "level",
 					placeholder: "请输入水平",
 					type: "input",
+
 				},
 				{
 					label: "选择标准",
@@ -87,12 +88,15 @@ export default {
 				{
 					prop: "name",
 					label: "姓名",
+					tooltip:true,
 					width: "",
 				},
 				{
 					prop: "date",
 					label: "日期",
 					width: "",
+					tooltip:true
+
 				},
 				{
 					prop: "address",
@@ -237,6 +241,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.item{
+	width: 100%;
+}
 ul,
 li,
 ol {

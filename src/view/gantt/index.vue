@@ -1,6 +1,7 @@
 <template>
 	<div class="gantt">
-		<div class="title">Click Gantt（可点击甘特图）</div>
+		<div class="title" @click="open">Click Gantt（可点击甘特图）</div>
+		<div class="" @click="close">关闭定时器</div>
 	  <div id="gstc">
 		<Gantt/>
 	</div>
@@ -14,11 +15,33 @@ export default {
 		Gantt
 	},
   data() {
-    return {};
+    return {
+		flag:false,
+		
+	};
   },
   mounted() {
 
   },
+  methods:{
+	close(){
+		this.flag=false
+		console.log('点击关闭');
+		window.clearInterval(this.Interval)
+	},
+	open(){
+		console.log('点击');
+		this.flag=true
+		this.Interval=window.setInterval(()=>{
+			console.log('定时器启动');
+		},10000)
+		setTimeout(()=>{
+			this.Interval=window.setInterval(()=>{
+				console.log('定时器启动');
+			},10000)
+		},5000)
+	}
+  }
 };
 </script>
 
