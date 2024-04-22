@@ -92,6 +92,12 @@ export default {
 							id:4541213131123,
 							path:"/map"
 
+						},
+						{
+							name:"Flight-Diagram",
+							description:"飞线图",
+							id:12314556686,
+							path:'/FlightDiagram'
 						}
 					]
 				},

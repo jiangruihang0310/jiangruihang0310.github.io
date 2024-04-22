@@ -17,6 +17,7 @@ import Log from '@/view/about/log'
 import DateCalculation from '@/view/dateCalculation'
 import CrossWindows from '@/view/crossWindows'
 import SceneGraph from '@/view/SceneGraph'
+import FlightDiagram from '@/view/FlightDiagram'
 const routes=[
 	{
 		path:"/",
@@ -110,6 +111,11 @@ const routes=[
 		path:'/SceneGraph',
 		name:'SceneGraph',
 		component:SceneGraph
+	},
+	{
+		path:'/FlightDiagram',
+		name:'FlightDiagram',
+		component:FlightDiagram
 	},
 	{ path: '*', name: 'not-found', component: NotFound }
 ]
