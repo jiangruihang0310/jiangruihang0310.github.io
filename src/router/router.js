@@ -18,6 +18,7 @@ import DateCalculation from '@/view/dateCalculation'
 import CrossWindows from '@/view/crossWindows'
 import SceneGraph from '@/view/SceneGraph'
 import FlightDiagram from '@/view/FlightDiagram'
+import Particle from '@/view/particle'
 const routes=[
 	{
 		path:"/",
@@ -116,6 +117,11 @@ const routes=[
 		path:'/FlightDiagram',
 		name:'FlightDiagram',
 		component:FlightDiagram
+	},
+	{
+		path:'/Particle',
+		name:'Particle',
+		component:Particle
 	},
 	{ path: '*', name: 'not-found', component: NotFound }
 ]

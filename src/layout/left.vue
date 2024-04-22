@@ -98,6 +98,12 @@ export default {
 							description:"飞线图",
 							id:12314556686,
 							path:'/FlightDiagram'
+						},
+						{
+							name:"Particle",
+							description:"粒子",
+							id:98453132321541212,
+							path:"/Particle"
 						}
 					]
 				},
@@ -125,7 +131,7 @@ export default {
 			}
 		}
 		onMounted(() => {
-
+			console.log(state.routeList);
 		})
 		return { ...toRefs(state), ...methods }
 	}
