@@ -98,7 +98,7 @@
 	  },
 	  //点击节点
 	  NodeClick(e, data) {
-		console.log(e, data);
+		// console.log(e, data);
 	  },
 	  //默认展开
 	  toggleExpand(data, val) {

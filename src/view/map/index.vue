@@ -24,7 +24,7 @@ export default {
         plugins: [""], // 需要使用的的插件列表，如比例尺'AMap.Scale'等
       })
         .then((AMap) => {
-			console.log(AMap);
+			// console.log(AMap);
           this.map = new AMap.Map("map", {
             pitch:65, //修改地图的初始俯仰角度，俯仰角的有效范围为0度－83度。
             viewMode: "3D", //设置viewMode属性为3D
@@ -42,7 +42,7 @@ export default {
 			})
 		
 			marker.on('click', function (p) {
-				console.log(p,123456789);
+				// console.log(p,123456789);
 				// 打开信息窗体，显示标注点相关信息
 				var infoWindow = new AMap.InfoWindow({
 					content: '这里是北京市',
@@ -54,7 +54,7 @@ export default {
 		marker.setMap(this.map)
         })
         .catch((e) => {
-          console.log(e);
+        //   console.log(e);
         });
 		
     },

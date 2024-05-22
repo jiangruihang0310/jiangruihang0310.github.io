@@ -215,15 +215,15 @@ export default {
 		commitData() {
 			// 这样就可以获取子组件中的表单数据啦
 			this.$refs[this.formConfig.ref].transferData().then((date) => {
-				console.log(date);
+				// console.log(date);
 			});
 		},
 		handleProgress(e){
-			console.log(e,'eeeeeeeeeeeeeeeeee');
+			// console.log(e,'eeeeeeeeeeeeeeeeee');
 		},
 		//table
 		getTableItem(row) {
-			console.log(row);
+			// console.log(row);
 		},
 		setStatus(scope) {
 			this.$confirm("确定改变状态吗？")

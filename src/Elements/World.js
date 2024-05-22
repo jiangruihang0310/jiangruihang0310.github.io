@@ -86,7 +86,7 @@ World.prototype.render = function () {
 };
 
 World.prototype.build = function (resources) {
-    console.log(resources);
+    // console.log(resources);
 
     const bgModel = resources['model-bg'].scene.children[0];
     const bgMaterial = backgroundMaterial(resources['texture-bg']);

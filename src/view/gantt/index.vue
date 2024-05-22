@@ -26,11 +26,11 @@ export default {
   methods:{
 	close(){
 		this.flag=false
-		console.log('点击关闭');
+		// console.log('点击关闭');
 		window.clearInterval(this.Interval)
 	},
 	open(){
-		console.log('点击');
+		// console.log('点击');
 		this.flag=true
 		this.Interval=window.setInterval(()=>{
 			console.log('定时器启动');

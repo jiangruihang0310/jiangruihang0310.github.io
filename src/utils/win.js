@@ -43,7 +43,7 @@ export const destroy = (scene,renderer,animate) => {
 	renderer.content = null
 	cancelAnimationFrame(animate) // 去除animationFrame
 	// window.removeEventListener('resize', this.onWindowResize)
-	console.log(document.querySelector('#container'));
+	// console.log(document.querySelector('#container'));
 	document.querySelector('#layout').removeChild(document.querySelector('#layout canvas'))
 	const gl = renderer.domElement.getContext('webgl')
 	gl && gl.getExtension('WEBGL_lose_context').loseContext()

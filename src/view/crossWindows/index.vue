@@ -61,7 +61,7 @@ export default {
 				initBalls() {
 					state.balls = [];
 					const wins = storage.getAll();
-					console.log(wins),'wins';
+					// console.log(wins),'wins';
 					wins.forEach(win => {
 						const ball = new BALL(state.camera, state.renderer, state.scene, { x: 0, y: 0 }, win.key);
 						const keys = wins.filter(item => item.key != win.key).map(item => item.key);

@@ -14,13 +14,13 @@ class ClockScreen {
 
         this.material = createClockScreenMaterial(this.texture);
 
-        console.log(this.mesh);
+        // console.log(this.mesh);
 
         this.init();
     }
 
     init() {
-        console.log('ss', this.material);
+        // console.log('ss', this.material);
         this.mesh.material = this.material;
 
         setInterval(() => {

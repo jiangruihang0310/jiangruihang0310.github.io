@@ -39,7 +39,7 @@ export function explode() {
 	  const center = value.userData.explodeCenter;
 	  const newPos = new THREE.Vector3().copy(center).add(distance).sub(offset);
 	  const localPosition = value.parent?.worldToLocal(newPos.clone());
-		console.log(localPosition,'localPosition');
+		// console.log(localPosition,'localPosition');
 	  new TWEEN.Tween(value.position)
 		.to(localPosition, 1000)
 		.easing(TWEEN.Easing.Linear.None)

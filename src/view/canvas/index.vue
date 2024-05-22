@@ -40,7 +40,7 @@
 	methods: {
 	  // 修改年
 	  changeYear (value) {
-		console.log('value', value)
+		// console.log('value', value)
 	  },
 	  clickType (index) {
 		this.currentType = index

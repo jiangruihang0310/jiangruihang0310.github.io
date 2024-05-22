@@ -177,7 +177,7 @@ export default {
 				return this.detectFace();
 			// 检测图像中具有最高置信度得分的脸部
 			const result = await detectSingleFace(this.video, this.options);
-			console.log(result,'result....');
+			// console.log(result,'result....');
 			if (!result) return this.detectFace();
 			// 匹配尺寸
 			const dims = matchDimensions(this.canvas, this.video, true);
@@ -207,8 +207,8 @@ export default {
 			let files = new window.File([image], "人脸头像.jpeg", {
 				type: "image/jpeg"
 			});
-			console.log(files);
-			console.log(image);
+			// console.log(files);
+			// console.log(image);
 			const detectResult= false
 			//调用接口传入截取的人脸头像进行检测f
 			// const detectResult = await this.computedService.faceDetect(

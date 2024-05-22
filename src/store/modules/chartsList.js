@@ -12,7 +12,7 @@ const state = {
 			state.line1Series=payload[1]
 			drawLine.xAxis[0].data=payload[2]
 		}else if(payload[0]==='bar1'){
-			console.log('sssss',payload[1]);
+			// console.log('sssss',payload[1]);
 			state.bar1Series=payload[1]
 		}
 	}

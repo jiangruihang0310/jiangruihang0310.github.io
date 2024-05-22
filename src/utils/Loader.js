@@ -83,7 +83,7 @@ class Loader {
     loadResource(resource) {
         const type = resource.type;
         if (!type) {
-            console.warn('type is required');
+            // console.warn('type is required');
             return;
         }
 

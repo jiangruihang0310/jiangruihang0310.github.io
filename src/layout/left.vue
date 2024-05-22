@@ -131,7 +131,7 @@ export default {
 			}
 		}
 		onMounted(() => {
-			console.log(state.routeList);
+			// console.log(state.routeList);
 		})
 		return { ...toRefs(state), ...methods }
 	}

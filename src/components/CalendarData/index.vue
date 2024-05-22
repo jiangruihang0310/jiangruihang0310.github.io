@@ -123,7 +123,7 @@
 		  calendarDateList.push({data: "", year: this.year, month: this.month});
 		}
 		this.showData = calendarDateList;
-		console.log(this.showData,'...........');
+		// console.log(this.showData,'...........');
 	  },
 	  // 当前点击日期
 	  detailClick (showData, index) {
@@ -132,7 +132,7 @@
 		}
 	  },
 	  clickDay(date){
-		console.log(date,'123');
+		// console.log(date,'123');
 	  }
 	  
 	}

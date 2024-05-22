@@ -6,12 +6,12 @@ const state = {
  };
  const mutations = {
 	addcharts(state,payload){
-		console.log('同步',payload);
+		// console.log('同步',payload);
 	}
  };
  const actions = {
 	 addcharts({commit},type){
-		console.log(type);
+		// console.log(type);
 		commit('addcharts',[type])
 	}
  };

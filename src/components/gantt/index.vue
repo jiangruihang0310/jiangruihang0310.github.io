@@ -338,7 +338,7 @@ export default {
 					echart.setOption(option, true);
 				}
 				echart.on('click', (params,index) => {
-					console.log(params.data);
+					// console.log(params.data);
 					window.alert('你点击了甘特图，点击的是：'+params.data.name+'  数据是：'+JSON.stringify(params.data.value));
 				// let pointInPixel = [params.offsetX, params.offsetY];
 				// if (echart.containPixel('grid', pointInPixel)) {

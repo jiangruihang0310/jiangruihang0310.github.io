@@ -35,7 +35,7 @@ export default {
 				state.setInter=setInterval(async ()=>{
 					const date=new Date().getTime()
 					const res=await getStatus(key.unikey,date)
-					console.log(res);
+					// console.log(res);
 					// setToken(1231546);
 					// console.log(getToken())
 					if(res.code == 802){
@@ -56,7 +56,7 @@ export default {
 				methods.getQrs()
 			}else{
 				const uid=await getAccount()
-						console.log(uid);
+						// console.log(uid);
 			}
 		})
 		return {...toRefs(state),...methods}

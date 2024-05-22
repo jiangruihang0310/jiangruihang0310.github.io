@@ -100,7 +100,7 @@ export default {
       this.isDraw = false;
     },
     drawLine(x, y) {
-		console.log('000',this.canvas.offsetTop);
+		// console.log('000',this.canvas.offsetTop);
       this.ctx.beginPath();
       this.ctx.lineWidth = 3; //设置线宽状态
       this.ctx.strokeStyle = this.$props.lineColor; //设置线的颜色状态
@@ -124,7 +124,7 @@ export default {
     },
     handleConfirm() {
       const base64Img = this.canvas.toDataURL("image/png");
-      console.log(base64Img);
+    //   console.log(base64Img);
       const img = document.createElement("img");
       img.src = base64Img;
     },

@@ -175,7 +175,7 @@ export default {
 		onMounted(() => {
 			const BUTTON = document.querySelector("button");
 			const html = document.querySelector("html")
-			console.log(JSON.parse(localStorage.getItem('isDark')));
+			// console.log(JSON.parse(localStorage.getItem('isDark')));
 			BUTTON.setAttribute("aria-pressed", !JSON.parse(localStorage.getItem('isDark')));
 			if (JSON.parse(localStorage.getItem('isDark'))) {
 				html.classList.add('light')
@@ -187,7 +187,7 @@ export default {
 			}
 			const TOGGLE = () => {
 				const IS_PRESSED = BUTTON.matches("[aria-pressed=true]");
-				console.log(IS_PRESSED);
+				// console.log(IS_PRESSED);
 				// if (SYNC.checked)
 
 				if (IS_PRESSED) {

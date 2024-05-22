@@ -1876,7 +1876,7 @@ export default {
 					// data1.push([time.getTime(), Math.random() * 100]);
 					// data1.push([time.getTime() + random_time * 3, Math.random() * 100]);
 					data1.push([time.getTime() + random_time * 6, Math.floor(Math.random() * 10) + 1]);
-					console.log(data1,'data1');
+					// console.log(data1,'data1');
 					// data2.push([time.getTime(), (Math.random() * 100).toFixed(0)]);
 					// data2.push([time.getTime() + random_time * 2, Math.random() * 100]);
 					// data2.push([time.getTime() + random_time * 4, Math.random() * 100]);

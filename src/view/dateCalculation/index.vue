@@ -35,7 +35,7 @@ export default {
 		})
 		const methods={
 			calculateDays(date1, date2) {
-				console.log(date1,date2);
+				// console.log(date1,date2);
 				if(date1,date2){
 					const oneDay = 1000 * 60 * 60 * 24; // 一天的毫秒数
 					const timeDiff = Math.abs(new Date(date2).getTime() - new Date(date1).getTime()); // 获取两个日期之间的毫秒数差值

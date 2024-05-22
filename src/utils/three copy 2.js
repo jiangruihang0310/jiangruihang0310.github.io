@@ -114,7 +114,7 @@ export const addGLTFHandler = (gltfPath, GltfFile) => {
 			})
 			setScaleToFitSize(gltf.scene)
 			center(gltf.scene)
-			console.log(2);
+			// console.log(2);
 			scene.add(gltf.scene)
 		},
 		(progress) => {
