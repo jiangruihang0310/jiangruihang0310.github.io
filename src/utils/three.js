@@ -19,6 +19,7 @@ import { FXAAShader } from "three/examples/jsm/shaders/FXAAShader.js";
 import { SMAAPass } from "three/examples/jsm/postprocessing/SMAAPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 import { CSS2DObject, Line2, LineGeometry,CSS2DRenderer } from 'three/examples/jsm/Addons.js';
+import { CSS3DRenderer,CSS3DObject } from 'three/examples/jsm/renderers/CSS3DRenderer'
 // import { ElMessage } from 'element-plus';
 import { vertexShader, fragmentShader } from '@/config/constant.js'
 let scene
@@ -48,7 +49,7 @@ let previousPopup = null; // 存储之前的弹窗
 let popupTimeout = null; // 存储定时器
 const loader = new FontLoader() // 创建字体加载器
 let selectedObjects=[]
-// console.log(store,'store');
+let objects// console.log(store,'store');
 export function init(dom, skys) {
     canvasDom=dom
 	parentWidth = dom.clientWidth
@@ -296,6 +297,7 @@ export function onMouseDown(event) {
 		//   console.log(intersects[0].object)
 		deleteDiv()
 		const obj = intersects[0].object
+		objects=obj
 		selectedObjects.push(obj);
 		// model=obj
 		outlineObj(selectedObjects)
@@ -309,16 +311,14 @@ export function onMouseDown(event) {
 }
 
 function threeToScreen(position, camera) {
-	var worldVector = new THREE.Vector3(
-		position.x,
-		position.y,
-		position.z
-	);
+	var worldVector = new THREE.Vector3();
 	var standardVector = worldVector.project(camera);//世界坐标转标准设备坐标
+	const rect = renderer.domElement.getBoundingClientRect();
 	var a = window.innerWidth / 2;
 	var b = window.innerHeight / 2;
-	var x = Math.round(standardVector.x * a + a);//标准设备坐标转屏幕坐标
-	var y = Math.round(-standardVector.y * b + b);//标准设备坐标转屏幕坐标
+	console.log(standardVector,'xxx')
+	var x = Math.round((standardVector.x * rect.width/2) + rect.left + rect.width / 2);//标准设备坐标转屏幕坐标
+	var y = Math.round(-(standardVector.y * rect.height/2)  + rect.top + rect.height / 2);//标准设备坐标转屏幕坐标
 	return {
 		x: x,
 		y: y
@@ -335,16 +335,19 @@ export function divPop(countryName, V3) {
      <div class="part-name">
             <p>${countryName}</p>
         </div>
-        <div class="part-dec">
-            <p>通过点击事件，获取模型名称，并在数据库查找信息，得到信息后从这里展示</p>
-        </div>
     `; //div的内容  
 	// div.style.padding = '5px';
 	div.style.position = 'absolute';
 	div.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+	div.style.color = 'red';
 	div.style.left = rs.x + "px";
 	div.style.top = rs.y + "px";
 	document.body.appendChild(div); //添加到页面 
+	// const boxObject = new CSS2DObject(div);
+	// console.log(boxObject,'boxObject',V3);
+	
+    // boxObject.position.set( V3.x,V3.y,V3.z );
+    // scene.add(boxObject);
 }
 // 清除弹窗
 export function deleteDiv() {
